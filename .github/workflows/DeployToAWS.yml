@@ -38,7 +38,7 @@ jobs:
         with:
           # --acl public read => makes files publicly readable(i.e. makes sure that your bucket settings are also set to public)
           # --delete => permanently deletes files in S3 bucket that are not present in latest build
-          args: --acl public-read --delete
+          args: --acl public-read --follow-symlinks --delete
         
         env:
            AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
